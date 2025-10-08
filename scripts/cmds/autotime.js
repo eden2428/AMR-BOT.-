@@ -3,16 +3,16 @@ const chalk = require("chalk");
 
 module.exports.config = {
   name: "autosent",
-  version: "10.1.0",
+  version: "10.1.1",
   hasPermssion: 0,
   credits: "MUNTASIR MAHMUD",
   description: "Automatically sends messages at scheduled times (Bangladesh Time)",
-  commandCategory: "info",
+  category: "group messenger", // ✅ fixed: correct field name
   usages: "[]",
   cooldowns: 3
 };
 
-// ✅ সব সময়ের মেসেজ লিস্ট (12AM - 11PM)
+// ⏰ All Messages (12AM–11PM)
 const messages = [
   { time: "12:00 AM", message: "এখন সময় রাত 12:00 AM ⏳\nঅনেক রাত হলো, ঘুমিয়ে পড় Bby Good Night 😴💤❤️" },
   { time: "1:00 AM", message: "এখন সময় রাত 1:00 AM ⏳\nকিরে তুই এখনো ঘুমাস নাই? তাড়াতাড়ি ঘুমিয়ে পড়!😾😴🛌" },
