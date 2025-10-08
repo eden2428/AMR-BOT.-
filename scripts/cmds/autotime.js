@@ -7,7 +7,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "MUNTASIR MAHMUD",
   description: "Automatically sends messages at scheduled times (Bangladesh Time)",
-  commandCategory: "group messenger",
+  commandCategory: "info",
   usages: "[]",
   cooldowns: 3
 };
