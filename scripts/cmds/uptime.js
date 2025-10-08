@@ -6,7 +6,7 @@ module.exports = {
     name: "uptime",
     aliases: ["up"],
     version: "1.3",
-    author: "SaiF",
+    author: "MUNTASIR MAHMUD ",
     role: 0,
     shortDescription: "",
     longDescription: "",
@@ -72,7 +72,7 @@ module.exports = {
 ├‣ OS: ${platform}
 ╰────────────◊
 
->🎀\n𝗔𝗸𝗮 𝗭'𝗮`;
+>🎀\𝐄𝐝𝐞𝐧 愛`;
 
       api.sendMessage({ body: msg }, event.threadID, event.messageID);
 
