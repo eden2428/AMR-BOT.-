@@ -1,7 +1,7 @@
 module.exports.config = {
  name: "info",
  version: "1.2.6",
- hasPermssion: 0,
+ hasPermission: 0,
  credits: "𝐄𝐝𝐞𝐧 愛",
  description: "Bot information command",
  commandCategory: "For users",
@@ -32,7 +32,7 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
  const totalUsers = global.data.allUserID.length;
  const totalThreads = global.data.allThreadID.length;
 
- const msg = `╭⭓ ⪩ 𝐁𝐎𝐓𝐓 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 ⪨
+ const msg = `╭⭓ ⪩ 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 ⪨
 │
 ├─ 🤖 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : 𝐘𝐎𝐔𝐑 মুরগীর বাচ্চা 😘
 ├─ ☢️ 𝗣𝗿𝗲𝗳𝗶𝘅 : ${config.PREFIX}
@@ -49,9 +49,6 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 │https://www.facebook.com/share/1Ytqik8pZP/
 ├─ 💌 𝗠𝗲𝘀𝘀𝗲𝗻𝗴𝗲𝗿 :
 │ https://m.me/ibonex.eden
-├─ 📞 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 :
-│ তরে দিমু ক্যা?😑
-│
 ╰───────⭓
 
 ╭⭓ ⪩ 𝗔𝗖𝗧𝗜𝗩𝗜𝗧𝗜𝗘𝗦 ⪨
@@ -64,17 +61,44 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 ❤️ 𝗧𝗵𝗮𝗻𝗸𝘀 𝗳𝗼𝗿 𝘂𝘀𝗶𝗻𝗴 🌺
  😍YOUR ADMIN EDEN 愛`;
 
- const imgLink = [
+ const imgLinks = [
  "https://i.imgur.com/nI4laT8.jpeg"
- ];
+];
 
  const imgLink = imgLinks[Math.floor(Math.random() * imgLinks.length)];
 
  const callback = () => {
- api.sendMessage({
- body: msg,
- attachment: fs.createReadStream(__dirname + "/cache/info.jpg")
- }, threadID, () => fs.unlinkSync(__dirname + "/cache/info.jpg"));
+   api.sendMessage({
+     body: msg,
+     attachment: fs.createReadStream(__dirname + "/cache/info.jpg")
+   }, threadID, () => fs.unlinkSync(__dirname + "/cache/info.jpg"));
+ };
+
+ return request(encodeURI(imgLink)).pipe(fs.createWriteStream(__dirname + "/cache/info.jpg")).on("close", callback);
+};
+╰───────⭓
+
+╭⭓ ⪩ 𝗔𝗖𝗧𝗜𝗩𝗜𝗧𝗜𝗘𝗦 ⪨
+│
+├─ ⏳ 𝗔𝗰𝘁𝗶𝘃𝗲 𝗧𝗶𝗺𝗲 : ${hours}h ${minutes}m ${seconds}s
+├─ 📣 𝗚𝗿𝗼𝘂𝗽𝘀 : ${totalThreads}
+├─ 🧿 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿𝘀 : ${totalUsers}
+╰───────⭓
+
+❤️ 𝗧𝗵𝗮𝗻𝗸𝘀 𝗳𝗼𝗿 𝘂𝘀𝗶𝗻𝗴 🌺
+ 😍YOUR ADMIN EDEN 愛`;
+
+ const imgLinks = [
+ "https://i.imgur.com/nI4laT8.jpeg"
+];
+
+ const imgLink = imgLinks[Math.floor(Math.random() * imgLinks.length)];
+
+ const callback = () => {
+   api.sendMessage({
+     body: msg,
+     attachment: fs.createReadStream(__dirname + "/cache/info.jpg")
+   }, threadID, () => fs.unlinkSync(__dirname + "/cache/info.jpg"));
  };
 
  return request(encodeURI(imgLink)).pipe(fs.createWriteStream(__dirname + "/cache/info.jpg")).on("close", callback);
